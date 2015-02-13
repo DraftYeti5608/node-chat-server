@@ -1,0 +1,74 @@
+html{
+	text-align: center;
+}
+.container{
+	margin-left: 25%;
+}
+
+#commands{
+	border: 1px solid black;
+	border-radius: 0 5px 5px 0;
+	height: 472px;
+	width: 200px;
+	float: left;
+	margin-left: -1px;
+}
+#commands h1{
+	background: #5CADFF;
+	margin: -1px;
+	padding: 2px;
+	border: 1px solid black;
+	border-radius: 0px 5px 0 0;
+}
+
+#chat{
+	float: left;
+	margin: auto;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 5px 0px 0px 5px;
+	padding: 5px;
+	width: 350px;
+}
+#status{
+	background-color: #5CADFF;
+	border: 1px solid black;
+	border-radius: 5px 0px 0 0;
+	margin: auto;
+	margin-left: -6px;
+	margin-right: -6px;
+	margin-top: -6px;
+	padding: 2px;
+}
+#chat_messages{
+	height: 400px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#chat_form{
+	position: relative;
+	margin: 0px;
+}
+
+#chat_input{
+	position: relative;
+	border-radius: 5px 0 0 5px;
+	margin-right: -8px;
+	border: 1px solid black;
+}
+
+#send{
+	background-color: black;
+	border-radius: 0 5px 5px 0;
+	text-color: #FFFFFF;
+	border: 1px solid black;
+}
+
+#message{
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	background-color: #CFCFCF;
+	border-radius: 5px;
+	width: 75%;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<div class="container">
+	<div id="chat">
+		<h1 id="status">Connecting to chat</h1>
+		<div id="chat_messages"></div>
+		<form id="chat_form" autocomplete="off">
+			<input type="text" name="chat_input" id="chat_input" autofocus/>
+			<input type="submit" value="send" id="send"/>
+		</form>
+	</div>
+	<div id="commands">
+		<h1>Commands</h1>
+		<p>/clear -- Clears chat</p>
+		<p>/panda -- Panda Image</p>
+		<p>Wrap input in:</p>
+		<p>&lt;b&gt;  &lt;/b&gt;</p>
+		<p>&lt;i&gt;  &lt;/i&gt;</p> 
+	<div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script>
+	var socket = io.connect();
+	socket.on('connect', function(data) {
+		$('#status').html("Connected to chat");
+		nickname = prompt("What is your nickname?");
+
+		socket.emit('join', nickname);
+	});
+	$('#chat_form').submit(function(event){
+		var message = $('#chat_input').val();
+		socket.emit('messages', message);
+		event.preventDefault();
+		$('#chat_input').val('');
+	});
+	socket.on('messages', function(data) { 
+		$('#chat_messages').append("<p id='message'>" + data + "</p>"); 
+		var elem = document.getElementById('chat_messages');
+		elem.scrollTop = elem.scrollHeight;
+	});
+	socket.on('clear', function(data) {
+		$('#chat_messages').empty();
+	});
+</script>
+</body>
