@@ -4,7 +4,7 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var sanitizeHtml = require('sanitize-html');
 
-var substrings = ["fuck", "shit", "piss", "patrick", "cunt", "bastard"];
+var substrings = ["fuck", "shit", "piss", "cunt", "bastard", "patrick"];
 
 function cleanMessage(message) {
 	message = message.replace("<", "&lt;");
@@ -25,7 +25,7 @@ io.on('connection', function(client) {
 	switch (message.substr(0, message.indexOf(" "))) {
 		case "/shout":
 			client.broadcast.emit('messages', "<h1>"+message.replace("/shout", "")+"</h1>");
-			client.emit('messages', "<h1>"+message.replace("/shout", "")+"</h1>");
+			client.emit('messages', "<h1 id='messages'>"+message.replace("/shout", "")+"</h1>");
 			break;
 		case "/panda":
 			client.broadcast.emit('messages', nickname + ": <img src='panda.jpg'/>");
