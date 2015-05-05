@@ -21,7 +21,8 @@ io.on('connection', function(client) {
     });
     client.on('messages', function(message) {
 	message = message + " ";
-        var nickname = client.nickname;
+    var nickname = client.nickname;
+	var message = cleanMessage(message);
 	switch (message.substr(0, message.indexOf(" "))) {
 		case "/shout":
 			client.broadcast.emit('messages', "<h1>"+message.replace("/shout", "")+"</h1>");
