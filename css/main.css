@@ -9,7 +9,7 @@ html{
 #commands{
 	border: 1px solid black;
 	border-radius: 0 5px 5px 0;
-	height: 469px;
+	height: 490px;
 	width: 200px;
 	float: left;
 	margin-left: -1px;
@@ -23,6 +23,7 @@ html{
 }
 
 #chat{
+	height: 480px;
 	float: left;
 	margin: auto;
 	text-align: center;
@@ -58,10 +59,10 @@ html{
 	border: 1px solid black;
 }
 
-#send{
-	background-color: black;
+.btn{
+	background-color: #FFF;
 	border-radius: 0 5px 5px 0;
-	text-color: #FFFFFF;
+	text-color: #000;
 	border: 1px solid black;
 }
 
