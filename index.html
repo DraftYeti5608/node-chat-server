@@ -36,10 +36,16 @@
 		$('#chat_input').val('');
 	});
 	socket.on('messages', function(data) { 
-		$('#chat_messages').append("<p id='message'>" + data + "</p>"); 
+		$('#chat_messages').append("<p class='message'>" + data + "</p>"); 
 		var elem = document.getElementById('chat_messages');
 		elem.scrollTop = elem.scrollHeight;
 	});
+	socket.on('shout', function(data) { 
+		$('#chat_messages').append("<h1 class='shout'>" + data + "</h1>"); 
+		var elem = document.getElementById('chat_messages');
+		elem.scrollTop = elem.scrollHeight;
+	});
+
 	socket.on('clear', function(data) {
 		$('#chat_messages').empty();
 	});

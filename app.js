@@ -25,8 +25,8 @@ io.on('connection', function(client) {
 	var message = cleanMessage(message);
 	switch (message.substr(0, message.indexOf(" "))) {
 		case "/shout":
-			client.broadcast.emit('messages', "<h1>"+message.replace("/shout", "")+"</h1>");
-			client.emit('messages', "<h1 id='messages'>"+message.replace("/shout", "")+"</h1>");
+			client.broadcast.emit('shout', nickname + ": "+ message.replace("/shout", ""));
+			client.emit('shout', nickname + ": " + message.replace("/shout", ""));
 			break;
 		case "/panda":
 			client.broadcast.emit('messages', nickname + ": <img src='panda.jpg'/>");
