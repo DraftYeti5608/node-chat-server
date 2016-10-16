@@ -5,11 +5,22 @@
 A node.js build chat server that is simple to deploy and supports usernames and commands.
 
 ----
+## Install and run
 
-Very early production, currently supports:
-+ Removal of certain words
-+ Chat commands e.g. `/clear`
+1. Clone or download this repo
+2. Run `npm install` 
+3. Run `./startup` 
 
-TODO:
-+ Save a log of the chat
-+ Provide usage instuctions
+## Features
++ Easy additon of banned words or new commands
++ Removal of certain words specified in an array
++ Chat commands:
+  * /clear
+  * /shout
+  * /panda
+
+## TODO
+- [ ] Save a log of the chat
+- [x] Provide usage instuctions
+- [ ] Refactor codebase
+- [ ] Make frontend look nicer
